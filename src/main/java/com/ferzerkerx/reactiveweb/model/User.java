@@ -2,16 +2,17 @@ package com.ferzerkerx.reactiveweb.model;
 
 
 public class User {
+
+    private Long id;
+    private String userName;
+
     public User() {
     }
 
-    public User(Long id, String user) {
+    public User(Long id, String userName) {
         this.id = id;
-        this.user = user;
+        this.userName = userName;
     }
-
-    private Long id;
-    private String user;
 
     public Long getId() {
         return id;
@@ -21,11 +22,11 @@ public class User {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.ServerResponse;
 
 import javax.annotation.Nonnull;
 
@@ -23,7 +24,7 @@ public class RoutesConfig {
     }
 
     @Bean
-    public RouterFunction<?> routerFunction() {
+    public RouterFunction<ServerResponse> routerFunction() {
         return route(GET("/api/user").and(accept(MediaType.APPLICATION_JSON)), userHandler::handleGetUsers)
                 .and(route(GET("/api/user/{id}").and(accept(MediaType.APPLICATION_JSON)), userHandler::handleGetUserById));
     }
